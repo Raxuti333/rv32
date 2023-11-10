@@ -3,8 +3,8 @@
 
 #define rs1 ((Emulator*)emulator)->registers[(instruction >> 15) & 0b11111]
 #define rs2 ((Emulator*)emulator)->registers[(instruction >> 20) & 0b11111]
-#define imm ((instruction >> 20) & 0b111111111111) + ((instruction >> 7) & 0b11111)
-#define PC ((Emulator*)emulator)->pc
+#define imm (((instruction >> 25) & 0b111111111111) << 5) + ((instruction >> 7) & 0b11111) - 4
+#define PC  ((Emulator*)emulator)->pc
 
 void beq(void* emulator, uint32_t instruction) { if(rs1 == rs2) { PC += imm; } }
 

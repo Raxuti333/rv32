@@ -15,7 +15,7 @@ static uint32_t mask[] =
 
 void emulate(Emulator* emulator)
 {
-    for(emulator->pc; emulator->pc < MEMORY; emulator->pc += 4)
+    for(emulator->pc; emulator->pc < 60; emulator->pc += 4)
     {
         uint32_t instruction = *(uint32_t*)(emulator->memory + emulator->pc);
 
@@ -28,7 +28,6 @@ void emulate(Emulator* emulator)
                 break;
             }
         }
-
         emulator->registers[0] = 0;
     }
 }
