@@ -79,4 +79,6 @@ void sw(void* emulator, uint32_t instruction);
 
 void ecall(void* emulator, uint32_t instruction);
 
+void mul(void* emulator, uint32_t instruction);
+
 #endif

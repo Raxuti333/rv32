@@ -15,8 +15,10 @@ static uint32_t mask[] =
 
 void emulate(Emulator* emulator)
 {
-    for(emulator->pc; emulator->pc < 60; emulator->pc += 4)
+    for(emulator->pc; emulator->pc < MEMORY; emulator->pc += 4)
     {
+        //printf("%i, %i\n", emulator->registers[10], emulator->registers[17]);
+
         uint32_t instruction = *(uint32_t*)(emulator->memory + emulator->pc);
 
         for(size_t i = 0; i < (sizeof(instructions) / sizeof(*instructions)); ++i)

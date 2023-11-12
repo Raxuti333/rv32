@@ -26,3 +26,5 @@ void sra(void* emulator, uint32_t instruction) { rd = (int32_t)rs1 >> rs2; }
 void slt(void* emulator, uint32_t instruction) { rd = (int32_t)rs1 < (int32_t)rs2; }
 
 void sltu(void* emulator, uint32_t instruction) { rd = rs1 < rs2; }
+
+void mul(void* emulator, uint32_t instruction) { rd = (int32_t)rs1 * (int32_t)rs2; }
